@@ -10,7 +10,7 @@ $ podman images
 ```
 $ cd <ruta de Dockerfile>
 $ podman build . -t procesar-jboss-app1:7.4.18
-$ podman run -dt -p 8080:8081/tcp localhost/procesar-jboss-app1:7.4.18 -v
+$ podman run --name <nombre container> -dt -p 9099:8080/tcp localhost/procesar-jboss-app1:7.4.18
 $ podman logs -l
 ```
 
@@ -22,6 +22,10 @@ $ podman rm <nombre container fallido>
 ```
 $ podman images
 $ podman rmi <imagen a purgar>
+```
+
+```
+$ podman exec -it <nombre container> /bin/bash
 ```
 
 ## Parking lot
