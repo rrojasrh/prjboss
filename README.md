@@ -1,4 +1,4 @@
-# Workshop al aire de JBoss EAP en contenedor.
+# Workshop de JBoss EAP en contenedor.
 
 ## Comandos de interes
 
