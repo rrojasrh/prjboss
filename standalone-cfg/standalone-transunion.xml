@@ -171,7 +171,7 @@
                         <exception-sorter class-name="org.jboss.jca.adapters.jdbc.extensions.oracle.OracleExceptionSorter"/>
                     </validation>
                 </datasource>
-                <datasource jndi-name="java:/jdbc/O394_SA_TRX_PROCESARECM" pool-name="jdbc/O394_SA_TRX_PROCESARECM">
+                <datasource jndi-name="java:/jdbc/O394_SA_TRX_ECM" pool-name="jdbc/O394_SA_TRX_ECM">
                     <connection-url>jdbc:oracle:thin:@//172.21.50.1:1540/DDBONSAR</connection-url>
                     <driver-class>oracle.jdbc.driver.OracleDriver</driver-class>
                     <driver>oracle</driver>

@@ -4,9 +4,6 @@ FROM registry.redhat.io/jboss-eap-7/eap74-openjdk8-openshift-rhel8:7.4.18
 # Set the environment variable JBOSS_HOME to /opt/jboss/jboss-eap-7.4.0
 ENV JBOSS_HOME="/opt/eap"
 
-### Add java opts parameters
-#ENV JAVA_OPTS="-javaagent:'/opt/eap/jboss-modules.jar' -server -Xlog:gc*:file='/opt/eap/standalone/log/gc.log':time,uptimemillis:filecount=5,filesize=3M -Xms128m -Xmx512m -XX:MetaspaceSize=96m -Djava.net.preferIPv4Stack=true -Djboss.modules.system.pkgs=jdk.nashorn.api -Djava.awt.headless=true -XX:+UseParallelOldGC -XX:MinHeapFreeRatio=10 -XX:MaxHeapFreeRatio=20 -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -XX:ParallelGCThreads=1 -Djava.util.concurrent.ForkJoinPool.common.parallelism=1 -XX:CICompilerCount=2 -XX:+ExitOnOutOfMemoryError -Djava.security.egd=file:/dev/./urandom --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-exports=jdk.unsupported/sun.misc=ALL-UNNAMED --add-exports=jdk.unsupported/sun.reflect=ALL-UNNAMED -Dmx.com.procesar.configuracion.properties='$JBOSS_HOME/cfg'"
-
 # Set the working directory to jboss' user home directory
 #WORKDIR /opt/eap/standalone/
 
@@ -15,9 +12,9 @@ USER root
 
 # RR: Copiar opciones de standalone.xml desde máquina de desarrollo a interior de imagen
 COPY standalone-cfg/ /standalone-cfg/
-RUN ln -s  /standalone-cfg/standalone-procesar.xml /opt/eap/standalone/configuration/standalone-a-usar.xml
+RUN ln -s  /standalone-cfg/standalone-transunion.xml /opt/eap/standalone/configuration/standalone-a-usar.xml
 
-# RR: Copiar toda la configuración específica de ProceSAR desde máquina de desarrollo a interior de imagen
+# RR: Copiar toda la configuración específica de TransUnion desde máquina de desarrollo a interior de imagen
 #RUN mkdir /opt/eap/cfg
 #COPY cfg/ /opt/eap/cfg/
 
